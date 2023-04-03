@@ -1,4 +1,6 @@
-@extends('layouts.app')
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/fontawesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{{ asset('examples/css/datatables.min.css') }}">
+@extends('layouts.home')
 
 
 @section('content')
@@ -21,7 +23,7 @@
 @endif
 
 
-<table class="table table-bordered">
+<table id="tabel-data" class="table table-striped table-bordered" width="100%" cellspacing="0">
  <tr>
    <th>No</th>
    <th>Name</th>
@@ -58,3 +60,10 @@
 
 <p class="text-center text-primary"><small>Tutorial by ItSolutionStuff.com</small></p>
 @endsection
+<script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script>
+    $(document).ready(function(){
+      $('#tabel-data').DataTable();
+  });
+    </script>
